@@ -25,17 +25,15 @@ load_dotenv()
 
 class Config:
     def __init__(self) -> None:
-        self.API_ID: str = os.environ.get("API_ID", None)
-        self.API_HASH: str = os.environ.get("API_HASH", None)
-        self.SESSION: str = os.environ.get("SESSION", None)
-        self.SUDOERS: list = [
-            int(id) for id in os.environ.get("SUDOERS", " ").split() if id.isnumeric()
-        ]
+        self.API_ID: str = "7113954"
+        self.API_HASH: str = "e09df0e45a8585fbbfa98316daa4a834"
+        self.SESSION: str = "AQAMcaDuzdFkC0zKVMI2IwHLK7RM0-fUP3pwqv4uldb6NFf8GHRbBUcvF4sTUtJxVneRo1vBm5zOokTdjM4OqkXDDZ2dW3QcDmMYHURGlLs0JSkBVboAXnZjatz7DGo3L2mkZHUkahtuMYMilyJ7wyD8rE_uv4dTRFqZnsmJx9sFEq4cypK6Z3Z9hNgopqxGPT5Mr14-z78Vb-tY5qWPY0Bw5aUzWDiNOPiUuaXRtb3a-LRtf-bMandRhTHH9wLLAMN8W3kqUO_2CKg8Ef1x27-GsUp9vQf9C8qYiA2Zp_OLw1zQH5gNuu6066xn_1nP_FXpRexp_XLj5-IPVtovF1IzZyLfIgA"
+        self.SUDOERS: str = "1808004347"
         if not self.SESSION or not self.API_ID or not self.API_HASH:
             print("Error: SESSION, API_ID and API_HASH is required!")
             quit(0)
-        self.QUALITY: str = os.environ.get("QUALITY", "high").lower()
-        self.PREFIXES: list = os.environ.get("PREFIX", "!").split()
+        self.QUALITY: str = "high"
+        self.PREFIXES: str = "/"
         self.LANGUAGE: str = os.environ.get("LANGUAGE", "en").lower()
 
 
