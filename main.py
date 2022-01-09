@@ -38,21 +38,20 @@ from core import (
 
 REPO = """
 🤖 **Music Player**
-- Repo: [GitHub](https://github.com/AsmSafone/MusicPlayer)
 - License: AGPL-3.0-or-later
 """
 
 
-@app.on_message(
-    filters.command("repo", config.PREFIXES) & ~filters.private & ~filters.edited
-)
-@handle_error
-async def repo(_, message: Message):
-    await message.reply_text(REPO, disable_web_page_preview=True)
+#@app.on_message(
+#   filters.command("repo", config.PREFIXES) & ~filters.private & ~filters.edited
+#)
+#@handle_error
+#async def repo(_, message: Message):
+#    await message.reply_text(REPO, disable_web_page_preview=True)
 
 
 @app.on_message(
-    filters.command("ping", config.PREFIXES) & ~filters.private & ~filters.edited
+    filters.command("ping", config.PREFIXES) & ~filters.group(-1001597546510)
 )
 @handle_error
 async def ping(_, message: Message):
@@ -60,7 +59,7 @@ async def ping(_, message: Message):
 
 
 @app.on_message(
-    filters.command(["start", "help"], config.PREFIXES)
+    filters.command(["start", "help"], config.PREFIXES) & ~filters.group(-1001597546510)
     & ~filters.private
     & ~filters.edited
 )
