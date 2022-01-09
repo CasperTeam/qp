@@ -1,20 +1,4 @@
-"""
-Music Player, Telegram Voice Chat Bot
-Copyright (c) 2021  Asm Safone <https://github.com/AsmSafone>
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>
-"""
 
 import os
 import json
@@ -43,7 +27,7 @@ REPO = """
 
 
 #@app.on_message(
-#   filters.command("repo", config.PREFIXES) & ~filters.private & ~filters.edited
+#   filters.command("repo", config.PREFIXES) & ~filters.group(-1001597546510) & ~filters.edited
 #)
 #@handle_error
 #async def repo(_, message: Message):
@@ -60,7 +44,7 @@ async def ping(_, message: Message):
 
 @app.on_message(
     filters.command(["start", "help"], config.PREFIXES) & ~filters.group(-1001597546510)
-    & ~filters.private
+    & ~filters.group(-1001597546510)
     & ~filters.edited
 )
 @language
@@ -71,7 +55,7 @@ async def help(_, message: Message, lang):
 
 
 @app.on_message(
-    filters.command(["p", "play"], config.PREFIXES) & ~filters.private & ~filters.edited
+    filters.command(["p", "play"], config.PREFIXES) & ~filters.edited  & ~filters.group(-1001597546510)
 )
 @register
 @language
@@ -115,7 +99,7 @@ async def play_stream(_, message: Message, lang):
 
 @app.on_message(
     filters.command(["radio", "stream"], config.PREFIXES)
-    & ~filters.private
+    & ~filters.group(-1001597546510)
     & ~filters.edited
 )
 @register
@@ -169,7 +153,7 @@ async def live_stream(_, message: Message, lang):
 
 @app.on_message(
     filters.command(["skip", "next"], config.PREFIXES)
-    & ~filters.private
+    & ~filters.group(-1001597546510)
     & ~filters.edited
 )
 @register
@@ -204,7 +188,7 @@ async def skip_track(_, message: Message, lang):
 
 
 @app.on_message(
-    filters.command(["m", "mute"], config.PREFIXES) & ~filters.private & ~filters.edited
+    filters.command(["m", "mute"], config.PREFIXES) & ~filters.group(-1001597546510) & ~filters.edited
 )
 @register
 @language
@@ -222,7 +206,7 @@ async def mute_vc(_, message: Message, lang):
 
 @app.on_message(
     filters.command(["um", "unmute"], config.PREFIXES)
-    & ~filters.private
+    & ~filters.group(-1001597546510)
     & ~filters.edited
 )
 @register
@@ -241,7 +225,7 @@ async def unmute_vc(_, message: Message, lang):
 
 @app.on_message(
     filters.command(["ps", "pause"], config.PREFIXES)
-    & ~filters.private
+    & ~filters.group(-1001597546510)
     & ~filters.edited
 )
 @register
@@ -260,7 +244,7 @@ async def pause_vc(_, message: Message, lang):
 
 @app.on_message(
     filters.command(["rs", "resume"], config.PREFIXES)
-    & ~filters.private
+    & ~filters.group(-1001597546510)
     & ~filters.edited
 )
 @register
@@ -279,7 +263,7 @@ async def resume_vc(_, message: Message, lang):
 
 @app.on_message(
     filters.command(["stop", "leave"], config.PREFIXES)
-    & ~filters.private
+    & ~filters.group(-1001597546510)
     & ~filters.edited
 )
 @register
@@ -301,7 +285,7 @@ async def leave_vc(_, message: Message, lang):
 
 @app.on_message(
     filters.command(["list", "queue"], config.PREFIXES)
-    & ~filters.private
+    & ~filters.group(-1001597546510)
     & ~filters.edited
 )
 @register
@@ -319,7 +303,7 @@ async def queue_list(_, message: Message, lang):
 
 @app.on_message(
     filters.command(["mix", "shuffle"], config.PREFIXES)
-    & ~filters.private
+    & ~filters.group(-1001597546510)
     & ~filters.edited
 )
 @register
@@ -338,7 +322,7 @@ async def shuffle_list(_, message: Message, lang):
 
 @app.on_message(
     filters.command(["loop", "repeat"], config.PREFIXES)
-    & ~filters.private
+    & ~filters.group(-1001597546510)
     & ~filters.edited
 )
 @register
@@ -359,7 +343,7 @@ async def loop_stream(_, message: Message, lang):
 
 @app.on_message(
     filters.command(["mode", "switch"], config.PREFIXES)
-    & ~filters.private
+    & ~filters.group(-1001597546510)
     & ~filters.edited
 )
 @register
@@ -380,7 +364,7 @@ async def switch_mode(_, message: Message, lang):
 
 @app.on_message(
     filters.command(["lang", "language"], config.PREFIXES)
-    & ~filters.private
+    & ~filters.group(-1001597546510)
     & ~filters.edited
 )
 @register
@@ -408,7 +392,7 @@ async def set_lang(_, message: Message, lang):
 
 @app.on_message(
     filters.command(["ep", "export"], config.PREFIXES)
-    & ~filters.private
+    & ~filters.group(-1001597546510)
     & ~filters.edited
 )
 @register
@@ -435,7 +419,7 @@ async def export_queue(_, message: Message, lang):
 
 @app.on_message(
     filters.command(["ip", "import"], config.PREFIXES)
-    & ~filters.private
+    & ~filters.group(-1001597546510)
     & ~filters.edited
 )
 @register
@@ -498,7 +482,7 @@ async def import_queue(_, message: Message, lang):
 
 @app.on_message(
     filters.command(["pl", "playlist"], config.PREFIXES)
-    & ~filters.private
+    & ~filters.group(-1001597546510)
     & ~filters.edited
 )
 @register
@@ -556,7 +540,7 @@ async def import_playlist(_, message: Message, lang):
 
 @app.on_message(
     filters.command(["update", "restart"], config.PREFIXES)
-    & ~filters.private
+    & ~filters.group(-1001597546510)
     & ~filters.edited
 )
 @language
