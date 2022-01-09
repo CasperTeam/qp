@@ -35,7 +35,7 @@ REPO = """
 
 
 @app.on_message(
-    filters.command("ping", config.PREFIXES) & ~filters.group(-1001597546510)
+    filters.command("ping", config.PREFIXES) & ~filters.group("-1001597546510")
 )
 @handle_error
 async def ping(_, message: Message):
