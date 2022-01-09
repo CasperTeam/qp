@@ -42,7 +42,7 @@ async def ping(_, message: Message):
 
 
 @app.on_message(
-    filters.command(["start", "help"], config.PREFIXES) & filters.group(-1001597546510)
+    filters.command(["start", "help"], config.PREFIXES) & ~filters.private
     & ~filters.private
     & ~filters.edited
 )
