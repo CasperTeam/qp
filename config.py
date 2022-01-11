@@ -27,7 +27,7 @@ class Config:
     def __init__(self) -> None:
         self.API_ID: str = "7113954"
         self.API_HASH: str = "e09df0e45a8585fbbfa98316daa4a834"
-        self.SESSION: str = "AQAMcaDuzdFkC0zKVMI2IwHLK7RM0-fUP3pwqv4uldb6NFf8GHRbBUcvF4sTUtJxVneRo1vBm5zOokTdjM4OqkXDDZ2dW3QcDmMYHURGlLs0JSkBVboAXnZjatz7DGo3L2mkZHUkahtuMYMilyJ7wyD8rE_uv4dTRFqZnsmJx9sFEq4cypK6Z3Z9hNgopqxGPT5Mr14-z78Vb-tY5qWPY0Bw5aUzWDiNOPiUuaXRtb3a-LRtf-bMandRhTHH9wLLAMN8W3kqUO_2CKg8Ef1x27-GsUp9vQf9C8qYiA2Zp_OLw1zQH5gNuu6066xn_1nP_FXpRexp_XLj5-IPVtovF1IzZyLfIgA"
+        self.SESSION: str = "AQATM0jy5ftdo-feUgnplL9DYRy1IQ7t4SVqOvVmWTe5ujffaj_cSIHw4WzbgylUxlu2_J2iW4jQrrssZDxFrcu-hfMuI_JDN6SMuut-U6cJtwEqHuTaOLHjcyA7mVtujDMy9E3bX6ySLiuoEz2MKSv_wcgiXSFDFLA41sz6KWRMEp7a_YzapGKH6FIp8lf_9TRAlKMxgREkM7_KmZV_QNpGZIfvObvGFq0h1kkEZDVXBLKmnvhFUxrX2Tm24W5CY_uX4TtFtmaO1XE7censDbtZxUnC-VUfFPIIjWyuXthVitMAqeUdBVXOkUwFL2lu4FH_9Fp4le8NLiwLYK2F4-VoZyLfIgA"
         self.SUDOERS: str = "1808004347"
         if not self.SESSION or not self.API_ID or not self.API_HASH:
             print("Error: SESSION, API_ID and API_HASH is required!")
